@@ -1,24 +1,21 @@
-import React from "React";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Chart from "./pages/Chart";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
+import Container from "./components/Container";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Hero />
+        <Container>
+          <Route exact path="/" component={Chart} />
+        </Container>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
