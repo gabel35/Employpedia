@@ -10,7 +10,6 @@ class Employees extends Component {
 
   componentDidMount() {
     API.getEmployees()
-      .then(res => res.json())
       .then(res => this.setState({ results: res.results }))
       .catch(err => console.log(err));
   }
@@ -20,7 +19,7 @@ class Employees extends Component {
       <div>
         <Container>
           <table className="table">
-            <tr>
+            {/* <tr>
               {results.map(results => (
                 <td>
                   {results.name.first} 
@@ -33,8 +32,21 @@ class Employees extends Component {
                   {results.location.country} 
                   {results.email} 
                   {results.phone} 
-                  {results.cell}</td>
+                  {results.cell}
+                </td>
               ))}
+            </tr> */}
+            <tr>
+              <th>Works?</th>
+              <th>Sad?</th>
+            </tr>
+            <tr>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>No</td>
+              <td>Very</td>
             </tr>
           </table>
         </Container>
