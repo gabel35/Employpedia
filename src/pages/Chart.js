@@ -19,10 +19,22 @@ class Employees extends Component {
       <div>
         <Container>
           <table className="table">
-            {/* <tr>
-              {results.map(results => (
-                <td>
-                  {results.name.first} 
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Gender</th>
+              <th>Timezone Time</th>
+              <th>Timezone Name</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Country</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Cell</th>
+            </tr>
+            <tr>
+              <td>{results.name.first}</td>
+              {/* <td> 
                   {results.name.last} 
                   {results.gender}
                   {results.timezone.offset}
@@ -33,20 +45,7 @@ class Employees extends Component {
                   {results.email} 
                   {results.phone} 
                   {results.cell}
-                </td>
-              ))}
-            </tr> */}
-            <tr>
-              <th>Works?</th>
-              <th>Sad?</th>
-            </tr>
-            <tr>
-              <td>Yes</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>No</td>
-              <td>Very</td>
+                </td> */}
             </tr>
           </table>
         </Container>
