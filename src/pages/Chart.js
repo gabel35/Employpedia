@@ -1,58 +1,42 @@
-import React, { Component } from "react";
-import API from "../utils/API";
+import React, { Component, useEffect, useState } from "react";
+// import API from "../utils/API";
 import Container from "../components/Container";
 
-class Employees extends Component {
-  state = {
-    results:[],
-    error: ""
-  };
+// class Employees extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       results: [],
+//     }
+//   }
 
-  componentDidMount() {
-    API.getEmployees()
-      .then(res => this.setState({ results: res.results }))
-      .catch(err => console.log(err));
-  }
+const Employees = () => {
+  const [results, setResults] = useState('');
 
-  render() {
-    return (
-      <div>
-        <Container>
-          <table className="table">
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Gender</th>
-              <th>Timezone Time</th>
-              <th>Timezone Name</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Country</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Cell</th>
-            </tr>
-            <tr>
-              <td>{results.name.first}</td>
-              {/* <td> 
-                  {results.name.last} 
-                  {results.gender}
-                  {results.timezone.offset}
-                  {results.timezone.description}
-                  {results.location.city} 
-                  {results.location.state}
-                  {results.location.country} 
-                  {results.email} 
-                  {results.phone} 
-                  {results.cell}
-                </td> */}
-            </tr>
-          </table>
-        </Container>
-      </div>
-    );
-  };
-}
+  useEffect(() => {
+    fetch("https://randomuser.me/api/")
+      .then(response => response.json())
+      .then(json => setResults(json.results))
+  }, [])
+
+
+  return (
+    <div>
+      <Container 
+        results={results.name}
+      />
+    </div>
+  );
+};
+
+  // componentDidMount() {
+  //   API.getEmployees()
+  //     .then(res => res.json())
+  //     .then(json => this.setState(json.results))
+  //     .catch(err => console.log(err));
+  // }
+
+
 
 
 export default Employees;

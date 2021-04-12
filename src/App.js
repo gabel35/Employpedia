@@ -9,7 +9,6 @@ function App() {
       <div>
         <Hero />
         <Container>
-          <Employees/>
         </Container>
         <Footer />
       </div>
