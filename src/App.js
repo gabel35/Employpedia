@@ -17,7 +17,7 @@ function App() {
     for (let i = 0; i < results.length; i++) {
       let txtResults = results[i];
       if (txtResults) {
-        let txtContent = txtResults.textContent;
+        let txtContent = txtResults.textContent.toLowerCase();
         if (txtContent.indexOf(filter) > -1) {
           results[i].style.display = "";
         } else {

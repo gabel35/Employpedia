@@ -8,7 +8,7 @@ function SearchForm(props) {
         onChange={props.handleInputChange}
         className="form-control"
         type="search"
-        placeholder="Search"
+        placeholder="Search any column"
       />
     </form>
   );
