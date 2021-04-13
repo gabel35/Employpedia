@@ -1,20 +1,24 @@
-import React, { Component, useEffect, useState } from "react";
-import Employees from "./pages/Chart";
-import Hero from "./components/Hero";
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Container from "./components/Container";
 
 function App() {
   
-  // const [results, setResults] = useState('');
+  // const [results, setResults] = useState([]);
 
   // useEffect(() => {
-  //   fetch("https://randomuser.me/api/?results=50&nat=us")
-  //     .then(response => response.json())
-  //     .then(json => setResults(json.results))
+  //   loadResults()
   // }, [])
 
-  var results = [{
+  // function loadResults () {
+  //   fetch("https://randomuser.me/api/?results=50&nat=us")
+  //   .then(res => setResults(res.results))
+  //   .catch(err => console.log(err))
+  // }
+
+
+  var stuff = [{
     name : {
       first: "Gabriel",
       last: "Sanchez"
@@ -72,14 +76,19 @@ function App() {
     cell: "973-000-000"
   }];
 
-  var res1 = results[0];
-  var res2 = results[1];
-  var res3 = results[2];
+  var res1 = stuff[0];
+  var res2 = stuff[1];
+  var res3 = stuff[2];
 
   return (
       <div>
-        <Hero />
-        <Container res1={res1} res2={res2} res3={res3}/>
+        <Header />
+        <Container 
+          // results={results} 
+          res1={res1} 
+          res2={res2} 
+          res3={res3}
+        />
         <Footer />
       </div>
   );
