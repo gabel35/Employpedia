@@ -27,7 +27,7 @@ An employee directory with React where a user can view an entire employee direct
 Please follow the following link to the application!
 [Employpedia](https://gabel35.github.io/employpedia/)
 
-![Employepedia Screenshot](.\public\assets\employpedia_screenshot.PNG)
+![Employepedia Screenshot](./public/assets/employpedia_screenshot.PNG)
 
 
 ## Credits
