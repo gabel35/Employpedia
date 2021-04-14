@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import API from "../../utils/API";
 
-const Container = () => {
+function Container() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -17,12 +17,57 @@ const Container = () => {
     .catch(err => console.log(err))
   }
 
+
+
+  // const [sorted, setSort] = useState([]);
+
+  // useEffect(() => {
+  //   onSortChange()
+  // }, [])
+
+  // const sortTypes = {
+  //   up: {
+  //     class: 'sort-up',
+  //     fn: (a, b) => a.name - b.name
+  //   },
+  //   down: {
+  //     class: 'sort-down',
+  //     fn: (a, b) => b.name - a.name
+  //   },
+  //   default: {
+  //     class: 'sort',
+  //     fn: (a, b) => a
+  //   }
+  // };
+
+	// // method called every time the sort button is clicked
+	// // it will change the currentSort value to the next one
+	// function onSortChange() {
+	// 	let nextSort;
+
+	// 	if (sorted === 'down') nextSort = 'up';
+	// 	else if (sorted === 'up') nextSort = 'default';
+	// 	else if (sorted === 'default') nextSort = 'down';
+  //   API.getEmployees()
+	// 	.then(res => setSort({sorted: nextSort}))
+	// };
+
+
+
+
   return (
     <div className="container">
      <table className="table">
       <thead>
         <tr>
-          <th>First Name</th>
+          <th>
+            {/* <button 
+              type="button" 
+              onClick={() => onSortChange('name')}
+            > */}
+              First Name
+            {/* </button> */}
+          </th>
           <th>Last Name</th>
           <th>Timezone Time</th>
           <th>Timezone Name</th>
@@ -49,6 +94,6 @@ const Container = () => {
      </table>
     </div>
   )
-}
+};
 
 export default Container;
